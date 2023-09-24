@@ -4,11 +4,68 @@
     color: white;
     text-align: center;
 }
+
+/* Para todos los contenedores*/
+.contenedor-main{
+    grid-template-columns: .3fr 2fr 1fr;
+    grid-template-rows: 6fr;
+    grid-auto-rows: 6fr;
+    gap: 5px;
+}
 .contenedor{
+    display: grid;
+    /* grid-template-columns: 100px 100px 100px; */
+    /* grid-template-columns: 50% 30% 20%; */
+    grid-template-columns: .5fr 2fr 2fr .5fr;
+    grid-template-rows: .1fr 2fr 1fr .3fr;
+    /* grid-auto-rows: 2fr; */
+    gap: 5px;
+    grid-template-areas: 
+    'header header header header'
+    'aside main main publicidad'
+    'aside main main publicidad '
+    'footer footer footer footer'
+    ;
+}
+/* Para contenedores particulares */
+.header{
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    color: white;
+    grid-area: header;
+    background-color: blue;
+}
+
+.main{
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: main;
+    background-color: gray;
+}
+.aside{
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: aside;
+    background-color: red;
+}
+.footer{
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: footer;
+    background-color: yellow;
+}
+.publicidad{
+    font-family: 'Times New Roman', Times, serif;
+    grid-area: publicidad;
+    background-color: green;
+}
+/* .contenedor{
     display: grid;
     grid-template-rows: 2fr 5fr 10fr 5fr 2fr;
     grid-template-columns: 2fr 5fr 5fr 5fr;
     gap: 5px;
+    margin: auto;
     text-align: center;
     grid-template-areas: 
     'header header header header'
@@ -16,8 +73,17 @@
     'aside main main main'
     'aside publicidad publicidad publicidad'
     'footer footer footer footer';
-}
-.contenedor >div >div{
+} */
+
+
+
+
+
+
+/* Para los boxes del main o los que se quiera editar */
+/* Sub contenedores del div para diferenciar*/
+/* .contenedor >div >div{
+    font-family: 'Times New Roman', Times, serif;
     align-items: center;
     text-align: center;
     background-color: white;
@@ -25,23 +91,23 @@
     padding: 1px;
     gap: 1px;
 }
-.item1{
-    grid-area: header;
-    background-color: blue;
+
+ */
+/* material sacado de instagram
+.flex-container{
+position: absolute;
+height: 20%;
+width: 20%;
+display: -webkit-flex;
+display: flex;
+overflow: hidden;
 }
-.item2{
-    grid-area: main;
-    background-color: gray;
-}
-.item3{
-    grid-area: aside;
-    background-color: red;
-}
-.item4{
-    grid-area: footer;
-    background-color: yellow;
-}
-.item5{
-    grid-area: publicidad;
-    background-color: green;
-}
+.flex-title{
+    color: #f1f1f1;
+    position: relative;
+    font-size: 6vw;
+    margin: auto;
+    text-align: center;
+    transform: rotate(90deg);
+    top: 15%;
+}*/
