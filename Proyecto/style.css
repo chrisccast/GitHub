@@ -1,3 +1,6 @@
+
+
+
 .box{
     background-color: white;
     padding: 2px;
@@ -6,14 +9,22 @@
 }
 /* Para contenedores particulares -----------------------------------*/
 .header{
+    display: inline-flex;
     justify-content: space-between;
+    margin: 27px auto 0;
+    position: relative;
+	width: 500px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
     font-family: 'Times New Roman', Times, serif;
-    font-size: small;
-    text-align: left;
     color: black;
     grid-area: header;
-    background-color: blue;
 }
+
+
+
 
 .main{
     display: grid;
@@ -41,10 +52,7 @@
 /* ---------------------------------------------- */
 
 /* Direcciones------------------------------------- */
-a{
-    color: azure;
-    gap: 2px;
-}
+
 img{
     width: 100%;
     height: 100%;
@@ -117,4 +125,5 @@ img{
                                             
 }
 /* ----------------------------------------------------------- */
+
 
