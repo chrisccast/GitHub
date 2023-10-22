@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="hoverheader.css">
+    
     <link rel="icon" type="image/jpg"
         href="https://static.vecteezy.com/system/resources/previews/009/784/979/non_2x/soccer-ball-icon-isolated-on-white-background-free-vector.jpg" />
     <!-- Importar fuente roboto de google -->
@@ -40,19 +41,24 @@
     <h2>Suscribase a nuestro Newsletter semanal</h2>
     <h3>Reciba todas las novedades del futbol argentino</h3>
     <div class="suscribe">
+<!-- --------------------------Formulario-------------------------- -->
     <div class="formularios">
-        <form action="#">
+        <form action="" name="formulario" method="get">
             <ul>
                 <li><label for="nombre">Nombre</label></li>
-                <input type="text" name="nombre" id="nombre" value="Nombre"><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" maxlength="30"><br>
+
                 <li><label for="apellido">Apellido</label></li>
-                <input type="text" name="apellido" id="apellido" value="Apellido"><br>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido" maxlength="45"><br>
+
                 <li><label for="email">E-mail</label></li>
-                <input type="text" name="email" id="email" value="E-mail"><br>
+                <input type="text" name="email" id="email" placeholder="E-mail" maxlength="60"><br>
+
                 <li><label for="telefono">Telefono</label></li>
-                <input type="text" name="telefono" id="telefono" value="celular"><br><br>
+                <input type="text" name="telefono" id="telefono" placeholder="celular" maxlength="20"><br><br>
+
                 <label for="submit"></label>
-                <input type="submit" value="Enviar">
+                <input type="submit" id="enviar" name="enviar" value="Enviar">
             </ul>
         </form>
     </div>
@@ -63,6 +69,7 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>
+<script src="validaciones.js"></script>
 </body>
 
 </html>

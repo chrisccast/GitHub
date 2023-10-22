@@ -18,6 +18,7 @@ header {
         height: 24px;
     }
 }
+
 /*----------------- texto del encabezado ---------------------*/
 header h1 {
     /* display: flex; */
@@ -108,7 +109,21 @@ div>img{
 }
 /*----------------- Son los subcampos del contenedor ---------------------*/
 .item{
-    display: flex;
+    display: inline-flex;
+    flex-wrap:nowrap;
+    height: auto;
+    width: 100%;
+    gap: .3rem;
+    /* border: 1px solid; */
+    border-radius: 15px;
+    /* background-color: white; */
+}
+/*----------------- Son los subcampos del contenedor unitarios 1 imagen y campo de texto ---------------------*/
+.miniitem{
+    display: inline-flex;
+    flex-wrap:nowrap;
+    height: auto;
+    width: 100%;
     gap: .3rem;
     border: 1px solid;
     border-radius: 15px;
@@ -135,4 +150,18 @@ footer{
     text-align: right;
     margin: 0;
     padding: 0;
+}
+@media(max-width: 768px){
+    .item{
+        display: flex;
+        flex-direction: column;/* significativa*/
+        align-items: flex-start;/*Significativa*/
+    }
+    header {
+        position:relative;
+        top: 0;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
 }

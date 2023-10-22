@@ -66,87 +66,66 @@ nav .animation {
 
 /* ----------------------------------------------------------------------------- */
 
-/* Son selectores, selector 1,2,3,4,5 para marcar la distancia entre palabras
- pero tambien puede usarse para que tome colores, este caso marca la distancia entre elementos del header */
-
- /* Separador de inicio */
-a:nth-child(1) {
+/* ------SUBMENU------------------------------------------------------- */
+ /* Separador de primera division */
+.submenu> a:nth-child(1) {
+	width: 17%;
+}
+/* Separador de primera nacional B */
+.submenu> a:nth-child(2) {
+	width: 20%;
+}
+/* Separador de Primera B */
+.submenu> a:nth-child(3) {
+	width: 16%;
+}
+/* Separador de Primera C */
+.submenu> a:nth-child(4) {
+	width: 16%;
+}
+/* Separador de Primera D */
+.submenu> a:nth-child(5) {
+	width: 15%;
+}
+/* Separador de Federal A */
+.submenu> a:nth-child(6) {
+	width: 15%;
+}
+/* ------ANIMACION CAMPEONATOS------------ */
+/* Animacion de primera division */
+.submenu .start-primeradivision, a:nth-child(1):hover~.animation {
 	width: 10%;
-}
-/* Separador de futbol argentino */
-a:nth-child(2) {
-	width: 22%;
-}
-/* Separador de messi */
-a:nth-child(3) {
-	width: 16%;
-}
-/* Separador de campeones */
-a:nth-child(4) {
-	width: 16%;
-}
-/* Separador de nosotros */
-a:nth-child(5) {
-	width: 16%;
-}
-/* Separador de suscribirse */
-a:nth-child(6) {
-	width: 16%;
-}
-/* ----------------------------------------------------------------------------- */
-/* En estos, indicamos segun el nth-child() que es el selector, de que tamano es la animacion
-hover animation indica que es el tamano del cuadro de desplazamiento, que tamano tiene y que posicion queda */
-
-/* class="animation start-home segun la clase, va a ser donde se ubique el indicador de la pagina, 
-por ende aca indicamos: 
-
-- nav (seccion nav)
-
-- .start-home(futbolargentino, messi, internacional, nosotros)
-
-indica que seccion se va a encontrar el cursor
-,
-- a:nth-child() 
-
-es la funcion selectora: hover-animation es para indicar que la animacion se hace en ese contexto
-color, distancia de la pantalla, y ancho de la animacion */
-
-/*---------- Posiciones y tamaños de la animacion ----------*/
-
-/* Animacion de inicio */
-nav .start-home, a:nth-child(1):hover~.animation {
-	width: 4.2%;
-	left: 0;
+	left: 0px;
 	background-color: #f3ccaa3e;
 }
 /* Animacion de futbol argentino */
-nav .start-futbolargentino, a:nth-child(2):hover~.animation {
-	width: 14%;
-	left: 9%;
+.submenu .start-primeranacionalb, a:nth-child(2):hover~.animation {
+	width: 12%;
+	left: 16.3%;
 	background-color: #f3ccaa3e;
 }
 /* Animacion de messi */
-nav .start-messi, a:nth-child(3):hover~.animation {
-	width: 6%;
-	left: 31%;
+.submenu .start-primerab, a:nth-child(3):hover~.animation {
+	width: 7%;
+	left: 36%;
 	background-color: #f3ccaa3e;
 }
 /* Animacion de campeones */
-nav .start-campeones, a:nth-child(4):hover~.animation {
-	width: 8.5%;
-	left: 47.5%;
+.submenu .start-primerac, a:nth-child(4):hover~.animation {
+	width: 7%;
+	left: 52%;
 	background-color: #f3ccaa3e;
 }
 /* Animacion de nosotros */
-nav .start-nosotros, a:nth-child(5):hover~.animation {
-	width: 8%;
-	left: 63.5%;
+.submenu .start-primerad, a:nth-child(5):hover~.animation {
+	width: 7%;
+	left: 68%;
 	background-color: #f3ccaa3e;
 }
 /* Animacion de suscribirse */
-nav .start-contact, a:nth-child(6):hover~.animation {
-	width: 8.6%;
-	left: 79.5%;
+.submenu .start-federala, a:nth-child(6):hover~.animation {
+	width: 10%;
+	left: 83.5%;
 	background-color: #f3ccaa3e;
 }
 
