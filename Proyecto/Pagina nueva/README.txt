@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/23e89bd8-4a0b-427d-988d-e6d44155ff20/deploy-status)](https://app.netlify.com/sites/ephemeral-kulfi-e88a66/deploys)
