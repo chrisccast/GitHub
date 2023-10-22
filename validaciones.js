@@ -5,9 +5,9 @@ let formulario = document.getElementsByName ('formulario')[0];
 let elementos = formulario.elements;
 let boton = document.getElementById('enviar');
 
-//todo a minusucula
-formulario.nombre.toLowerCase();
-formulario.apellido.toLowerCase();
+// //todo a minusucula
+// formulario.nombre.toLowerCase();
+// formulario.apellido.toLowerCase();
 
 //validacion por nulo y por pocas letras
 let validarNombre = function (e){
