@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../hoverheader.css">
+    <link rel="stylesheet" href="../hoversubheadercargar.css">
+    <link rel="icon" type="image/jpg"
+        href="https://static.vecteezy.com/system/resources/previews/009/784/979/non_2x/soccer-ball-icon-isolated-on-white-background-free-vector.jpg" />
+    <!-- Importar fuente roboto de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- -------------------------------------- -->
+    <title>Somos deporte</title>
+</head>
+<header>
+    <h1>
+        <!-- <img src="https://img.freepik.com/psd-premium/balon-futbol-aislado-render-3d_286925-255.jpg"> -->
+        <img
+            src="https://w7.pngwing.com/pngs/260/649/png-transparent-fc-barcelona-football-drawing-futsal-pelota-futbol-game-monochrome-sports-equipment.png">
+        <b>Somos deporte</b>
+
+    </h1>
+    <!-- ---------------------------------------------------- -->
+    <nav class="menu">
+        <a href="../home.html">Inicio</a>
+        <a href="../FutbolArgentino.html">Futbol Argentino</a>
+        <a href="../messi.html">Messi</a>
+        <a href="../campeonesmundiales.html">Campeones</a>
+        <a href="../quienessomos.html">Nosostros</a>
+        <a href="../suscripcion.html">Suscribirse</a>
+        <a href="../CargadeJugadores.html">Cargar</a>
+        <div class="animation start-cargar"></div>
+    </nav>
+    <!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
+    <nav class="submenu">
+        <a href="listado.html">Listado</a>
+        <a href="altas.html">Altas</a>
+        <a href="modificar.html">Modificar</a>
+        <a href="eliminar.html">Eliminar</a>          
+        <div class="animation start-listado"></div>
+    </nav>
+    <!-- ---------------------------------------------------- -->
+</header>
+<!-- ----------------------------------------------------  --------------->
+<body>
+    <h1>MODIFICAR INFORMACION DE JUGADORES</h1>
+    
+    <div id="app">
+        <form @submit.prevent="obtenerProducto">
+            <label for="Id_Jugador">Id_Jugador:</label>
+            <input type="number" v-model="Id_Jugador" required><br>
+            <button type="submit">Modificar Producto</button> 
+        </form>
+
+        <div v-if="mostrarDatosProducto">
+            
+            <form @submit.prevent="guardarCambios">
+                <label for="descripcionModificar">Jugador:</label>
+                <input type="text" id="descripcionModificar" v-model="Jugador" required><br>
+
+                <label for="cantidadModificar">Equipo:</label>
+                <input type="text" id="cantidadModificar" v-model="Equipo" required><br>
+
+                <label for="precioModificar">Posicion:</label>
+                <input type="text" id="precioModificar" v-model="Posicion" required><br> 
+                
+                <label for="precioModificar">Liga:</label>
+                <input type="text" id="precioModificar" v-model="Liga" required><br>
+                                
+                <label for="proveModificar">valor:</label>
+                <input type="number" step="10000" id="proveModificar" v-model="valor" required><br>
+
+                <button type="submit">Guardar Cambios</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const URL = "http://127.0.0.1:5000/"
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    Id_Jugador: '',
+                    Jugador: '',
+                    Equipo: '',
+                    Posicion: '',
+                    Liga: '',
+                    valor: " ",
+                    mostrarDatosProducto: false,
+                };
+            },
+            methods: {
+                obtenerProducto() {
+                    fetch(URL + 'futbolintenacional/' + this.Id_Jugador)
+                        .then(response => response.json())
+                        .then(data => {
+                            this.Jugador = data.Jugador;
+                            this.cantidad = data.cantidad;
+                            this.Equipo = data.Equipo;
+                            this.Posicion = data.Posicion;
+                            this.Liga =  data.Liga;
+                            this.valor =  data.valor;
+                            this.mostrarDatosProducto = true;
+                        })
+                        .catch(error => console.error('Error:', error));
+                },
+                
+                
+                guardarCambios() {
+                    const formData = new FormData();
+                    formData.append('codigo', this.Id_Jugador);
+                    formData.append('Jugador', this.Jugador);
+                    formData.append('Equipo', this.Equipo);
+                    formData.append('Posicion', this.Posicion);
+                    formData.append('Liga', this.Liga);
+                    formData.append('valor', this.valor);
+
+                    
+
+                    fetch(URL + 'futbolintenacional/' + this.Id_Jugador, {
+                        method: 'PUT',
+                        body: formData,
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert('Producto actualizado correctamente');
+                            this.limpiarFormulario();
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error al actualizar el producto');
+                        });
+                },
+                limpiarFormulario() {
+                    this.Id_Jugador = '';
+                    this.Jugador = '';
+                    this.Equipo= '';
+                    this.Posicion = '';
+                    this.Liga = '';
+                    this.valor = null;                    
+                    this.mostrarDatosProducto = false;
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+
+</body>
+</html>
